@@ -22,22 +22,10 @@ from bin.postprocess import postproc_stat, postproc_dyn, postproc_vib, postproc_
 from bin.read_section import read_section
 import time
 #%% Laucher
-# Close the open plots
-# folder           : path of the file
-# baseroot         : baseroot to the folder
-# fileroot         : configuration file path
-# case_setup       : information of the setup
-# meshfile         : path of the mesh file
-# mesh_data        : information of the mesh
-# section          : information of the section mesh
-# sol_phys         : information of the solid physics
-# solution         : solution information
-# section_globalCS : coordinates of the section all the subsections
-# 'D:/Documentos/HERMESUPV/HermesUPV/2021_2022/design_wing_semimonocoque/steady/v_10ms' #
 plt.close('all')
-folder                      = 'D:/Documentos/Doctorado/rotating_plate/aerodynamics/lambda_0.0'#
-baseroot                    = folder + '/' #'pruebas/airfoil/test/'+folder+'/' #  'videos/warp/'+folder+'/'#
-filecase                    = baseroot + 'case_base.abe' #'case_base_elast_st2.abe' #'case_base.abe' #'prop_0.0.abe' # 'case_J0_O5000.abe' # 
+folder                      = './flatplate/vel_5m_s'
+baseroot                    = folder + '/' 
+filecase                    = baseroot + 'case_base.abe'
 case_setup                  = read_case(filecase)
 case_setup.root             = baseroot
 meshfile                    = baseroot + case_setup.meshfile
@@ -101,7 +89,4 @@ elif case_setup.problem_type == "FLY_AEL_STAT":
     print('... Ending aeroelastic steady flight')
     postproc_stat(case_setup,mesh_data,solution, section_globalCS)
     
-sys.path.remove(current_path)    
-#print('CT: '+str(solution.CT*0.5**4*(2*np.pi)**2*np.pi))
-#print('CP: '+str(solution.CP*0.5**5*(2*np.pi)**3*np.pi))
-#print('eta: '+str(solution.PE))
+sys.path.remove(current_path) 

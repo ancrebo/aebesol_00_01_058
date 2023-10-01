@@ -1,0 +1,11 @@
+% file to include extra mass
+STIFF= YES
+MAT= ../../materials/pmmahkust.txt
+a= 335.498e-6
+Ixx= 728815.818e-12
+Iyy= 511.968e-12 %  
+Ixy= 0
+JJ=  7.79E-10
+FW=  0 %7.28548786e-07
+xCG=  39.174e-3
+yCG= 0

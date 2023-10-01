@@ -1,0 +1,172 @@
+SECT=	YES																
+NELEM=	32																
+0	0	1		../../mesh/ribs/ribs_PMMA_0.txt													
+1	1	2															
+2	2	3															
+3	3	4		../../mesh/ribs/ribs_PMMA_0.txt													
+4	4	5		../../mesh/ribs/ribs_PMMA_0.txt													
+5	5	6															
+6	6	7															
+7	7	8		../../mesh/ribs/ribs_PMMA_0.txt													
+8	8	9		../../mesh/ribs/ribs_PMMA_0.txt													
+9	9	10															
+10	10	11															
+11	11	12		../../mesh/ribs/ribs_PMMA_0.txt													
+12	12	13		../../mesh/ribs/ribs_PMMA_0.txt													
+13	13	14															
+14	14	15															
+15	15	16		../../mesh/ribs/ribs_PMMA_0.txt													
+16	16	17		../../mesh/ribs/ribs_PMMA_0.txt													
+17	17	18															
+18	18	19															
+19	19	20		../../mesh/ribs/ribs_PMMA_0.txt													
+20	20	21		../../mesh/ribs/ribs_PMMA_0.txt													
+21	21	22															
+22	22	23															
+23	23	24		../../mesh/ribs/ribs_PMMA_0.txt													
+24	24	25		../../mesh/ribs/ribs_PMMA_0.txt													
+25	25	26															
+26	26	27															
+27	27	28		../../mesh/ribs/ribs_PMMA_0.txt													
+28	28	29		../../mesh/ribs/ribs_PMMA_0.txt													
+29	29	30															
+30	30	31															
+31	31	32		../../mesh/ribs/ribs_PMMA_0.txt													
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+% disp	0.00E+00		../../mesh/section/mem_spar_pmma.txt														
+% eps	1.50E-03																
+																	
+																	
+																	
+NPOINT=	33																
+0	0	0	0.00000000	PRI-0	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar_pmma.txt
+1	0	0	0.00150000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+2	0	0	0.02487500	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+3	0	0	0.04825000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+4	0	0	0.04975000	PRI-0	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar_pmma.txt
+5	0	0	0.05125000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+6	0	0	0.07462500	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+7	0	0	0.09800000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+8	0	0	0.09950000	PRI-0	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar_pmma.txt
+9	0	0	0.10100000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+10	0	0	0.12437500	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+11	0	0	0.14775000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+12	0	0	0.14925000	PRI-0	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar_pmma.txt
+13	0	0	0.15075000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+14	0	0	0.17412500	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+15	0	0	0.19750000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+16	0	0	0.19900000	PRI-0	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar_pmma.txt
+17	0	0	0.20050000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+18	0	0	0.22387500	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+19	0	0	0.24725000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+20	0	0	0.24875000	PRI-0	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar_pmma.txt
+21	0	0	0.25025000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+22	0	0	0.27362500	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+23	0	0	0.29700000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+24	0	0	0.29850000	PRI-0	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar_pmma.txt
+25	0	0	0.30000000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+26	0	0	0.32337500	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+27	0	0	0.34675000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+28	0	0	0.34825000	PRI-0	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar_pmma.txt
+29	0	0	0.34975000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+30	0	0	0.37312500	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+31	0	0	0.39650000	PRI-1	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar.txt
+32	0	0	0.39800000	PRI-0	1	../../mesh/section/mem_spar.txt	-4	1	0	0						%	../../mesh/section/mem_spar_pmma.txt
+																	
+																	
+																	
+NMARK=	4																
+MARK_NAME=	beam																
+MARK_NODE=	33																
+0																	
+1																	
+2																	
+3																	
+4																	
+5																	
+6																	
+7																	
+8																	
+9																	
+10																	
+11																	
+12																	
+13																	
+14																	
+15																	
+16																	
+17																	
+18																	
+19																	
+20																	
+21																	
+22																	
+23																	
+24																	
+25																	
+26																	
+27																	
+28																	
+29																	
+30																	
+31																	
+32																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+MARK_NAME=	Root																
+MARK_NODE=	1																
+0																	
+MARK_NAME=	Tip																
+MARK_NODE=	1																
+32																	
+MARK_NAME=	batten																
+MARK_NODE=	8																
+4																	
+8																	
+12																	
+16																	
+20																	
+24																	
+28																	
+32																	

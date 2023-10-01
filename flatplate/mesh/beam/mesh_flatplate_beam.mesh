@@ -1,0 +1,22 @@
+SECT=	YES	%	To	store	the	nodes	of	the	section	and	plot	the	shape																
+NELEM=	1	%	Number	of	elements																								
+0	0	1	%	#num	element	#node	0	#node	1																			
+																													
+NPOINT=	2																												
+0	0	0	0	PRI-0	1	../mesh/section/placa_plana.txt		-2.5	1	0	0	%	#num	node	#x	#y	#z	#number	of	subsections	(rigid	between	them)	#name	of	the	section	#rotation	of	section	 #scale	of	the	magnitudes	in	section	file
+1	0	0	0.37	PRI-0	1	../mesh/section/placa_plana.txt		-2.5	1	0	0	%	#num	node	#x	#y	#z	#number	of	subsections	(rigid	between	them)	#name	of	the	section	#rotation	of	section	 #scale	of	the	magnitudes	in	section	file
+																													
+																													
+NMARK=	3	%	number	of	markers																								
+MARK_NAME=	Fixed	%	name	of	the	marker																							
+MARK_NODE=	1	%	number	of	nodes	in	the	marker																					
+0	%	#	node																										
+MARK_NAME=	Load	%	name	of	the	marker																							
+MARK_NODE=	1	%	number	of	nodes	in	the	marker																					
+1	%	#	node																										
+																								
+MARK_NAME=	Beam	%	name	of	the	marker																							
+MARK_NODE=	2	%	number	of	nodes	in	the	marker																					
+0	%	#	node																										
+1	%	#	node																										
+																													

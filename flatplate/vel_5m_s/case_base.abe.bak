@@ -1,0 +1,496 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aeroelastic Beam Element Solver - ABESOL   %
+% Version: 00.01.000 beta                    %
+%                                            %
+% Author: Andres Cremades Botella            %
+% Date: 24/09/2020                           %
+% Case: Example 1 flat plate orthotropic     %
+%       90/0/0/90                            %
+% 	Stationary, vertical load            %
+%                                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Type of problem: STRUC_STAT (structural static)\ STRUC_DYN (structural dynamic)\ 
+%                  VIB_MOD (vibration modes)\ AEL_DYN (aeroelastic dynamic)
+
+PROB_TYPE= AEL_DYN
+
+% Stress model: FLAT_STRESS (appropiated for 2D elements, classical laminates theory)\
+%               BEAM_STRESS (recomended, for 1D bars)
+
+STRESS_MODEL= FLAT_STRESS
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+SAVE OPTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PRINT_VALUES= 1
+% Save results in csv: YES\NO
+
+SAVE_FILE= NO
+
+% Name of the saved file (without spaces and extensions from the root path)
+
+SAVE_FILE_NAME= results/guardar_stat_5ref
+
+% Save the first # nodes (for VIB_MOD)
+
+SAVE_FILE_MODES= 10
+
+% Save every # time steps (for STRUC_STAT)
+
+SAVE_FILE_STEP= 1
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AERODYNAMIC DATA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aerodynamic model: TEOR_SLOPE (2pi aerodynamic slope)
+
+%AERO_MODEL= TEOR_SLOPE
+%AERO_POLAR{
+POLAR_ID= flat_plate_t4
+3D_EFF= LLT
+VIND_TOL= 1e-3
+VIND_MAXIT= 1e3
+}
+
+%AERO_MODEL= POLAR 
+%AERO_POLAR{
+POLAR_ID= flat_plate_t4
+POLAR_FILE= ../polar/polar_flatplate.csv
+POLAR_INDEP= POSITION,ANGLE_DEG
+POLAR_DEP= CD,CL,-CM
+3D_EFF= LLT
+VIND_TOL= 1e-3
+VIND_MAXIT= 1e3
+}
+
+AERO_MODEL= POLAR_ANN %TEOR_SLOPE
+AERO_POLAR{
+POLAR_ID= flat_plate_t4
+Q_STD= 1
+POLAR_FILE= ../polar/polar_flatplate.csv
+POLAR_INDEP= POSITION,ANGLE_DEG
+POLAR_DEP= CD,CL,-CM
+ANN_FILE= ../ann/FNN_50N5000epochmodel1.h5
+ANN_TYPE= FNN
+ANN_INDEP= AOA_MEAN_DEG,DELTA_AOA_DEG,DER_AOA_DEG,DER_DER_AOA_DEG
+ANN_DEP= CL_DYN,-CM_DYN
+ANN_NORM= ../ann/FNN_50N5000epochmodel1_norm.csv
+3D_EFF= LLT
+VIND_TOL= 1e-3
+VIND_MAXIT= 1e3
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TRANSIENT SOLVER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+MOD_SOL= YES
+N_MOD= 4
+
+% Initialization of the problem, number of iterations of the explicit solver
+
+INIT_IT= 5
+
+% Numerical method
+% * Explicit Runge-Kutta order 4 ------------------------------------- RK4_EXP
+% * Predictor-corrector Runge-Kutta order 4 -------------------------- RK4_PC
+% * Adaptative time step predictor-corrector Runge-Kutta order 4 ----- ADA_RK4_PC (recomended)
+% * Backward implicit order 4 ---------------------------------------- BACK4_IMP
+% * Implicit Adams-Moulton order 4 ----------------------------------- AM4_IMP
+% * Predictor-corrector Adams-Moulton order 3 ------------------------ AM3_PC
+% * Predictor-corrector Hamming order 3 ------------------------------ HAM3_PC
+
+% INITIAL NUMERICAL METHOD
+
+INIT_SOLVER= ADAEX_RK4_EXP
+ADA_TOL= 1e-4
+% SOLVER NUMERICAL METHOD
+SOLVER= ADAEX_RK4_EXP
+
+
+
+% Calculation total time in seconds
+
+TOT_TIME= 0.01
+Time step in seconds (if the time step is to high the calculation migh diverge)
+
+TIME_STP= 2e-4
+
+% Initial conditions of the transient solution
+% Use a file to set the initial conditions: YES\NO
+
+INI_CON= NO 
+
+% The file to use initial conditions (without spaces from the root paht)
+
+INI_CON_DATA= 
+
+% Set the filter for velocity and acceleration
+FILT= NO
+FILT_FREQ= 50
+FILT_TTRAN= 1
+FILT_DB= 100
+FILT_WID= 20
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MESH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Path to the mesh file
+
+MESH_FILE= ../mesh/beam/mesh_flatplate_beam.mesh 
+
+REF_MESH= 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SOLID PHYSICS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Damping model of the sistem for STRUC_DYN: RAYLEIGH\NONE
+
+DAMP= NONE %RAYLEIGH
+
+% Damping of the system
+
+DAMP_RAY_VAL= 0.0001
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BOUNDARY CONDITIONS	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Boundary conditions for clamped section:
+% MARK_ID{
+% BC_DISP= name of the set of sections
+% BC_VALUES= value of the vector of displacements, rotations, and derivatives of the rotation
+% }
+
+MARK_ID{ 
+BC_DISP= Fixed 
+BC_VALUES= 0 0 0 0 0 0 0 0 0
+}
+
+
+MARK_ID{ 
+BC_AERO= Beam
+BC_POLAR= flat_plate_t4
+BC_VINF= 5
+BC_AOA= 0
+BC_RHO= 1.225
+BC_MU= 	1.74E-5
+L_REF= 0.1
+S_REF= 0.037
+BC_REFPOINT= 0
+BC_REFCL= 0,1,0
+BC_REFCD= 1,0,0
+BC_REFCM= 0,0,-1
+BC_VDIR= 1,0,0
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LOAD FUNCTIONS	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+% Transient function for the boundary conditions...
+% TRAN_MARK= name of the marker...
+% FUNCTION= SIN: AMPL= FREQ= PHAS= (sinusoidal function with amplitude AMPL, frequency FREQ 
+%                                  and initial phase PHAS)
+% FUNCTION= SIGM: SLP= MID_POIN= (sigmoid function with a slope in the center of value SLP 
+%                                and a midpoint of value MID_POIN=)
+% FUNCTION= TABLE: FILE= PER= YES\NO (the function is loaded from a csv file with the values 
+%                                    of the funcion and the time, if PERI= YES the function...
+%                                    is repeated, if PERI= NO, the last value is mantained
+% ----------------------------------------------------------------------------
+% TRAN_BC{
+% TRAN_MARK= Load
+% FUNCTION= SIN: 
+% AMPL= 10 
+% FREQ= 10
+% PHAS= 0
+% }
+% ----------------------------------------------------------------------------
+%TRAN_BC{
+TRAN_MARK= Beam
+FUNCTION= SIGM:
+SLP= 5
+MID_POIN= 0.05
+}
+% ----------------------------------------------------------------------------
+% TRAN_BC{
+% TRAN_MARK= Load
+% FUNCTION= TABLE:
+% FILE=  boundary_conditions/impulse.csv
+% PER= NO
+% }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PLOTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Deformed shape of all the structure
+% FIGURE= number of the figure to plot
+% MARK= add marker if the plot must be applied to a certain area
+% MARK2= add marker if the plot must be applied to a certain area
+% MODE= mode to plot in the case of VIB_MOD
+% SAVE= path to save the file (without spaces)
+% DELTA_FRAME= number of steps to skip between frames in the animation
+% FPS= frames per second of the animation
+% XLABEL= text of the x axis label
+% YLABEL= text of the y axis label
+% ZLABEL= text of the z axis label
+% TITLE= text of the title of the plot
+% DIHEDRAL= first axis to plot in the animation X (x-y-z), Y (y-z-x), Z (z-x-y)
+
+
+% XY plot
+% FIGURE= figure to create the plot
+% TYPE= SPACE\TIME (magnitude of the x axis, TIME only for STRUC_DYN
+% ANIM= YES\NO (to create an animation)
+% SAVE= path to save the figure
+% MARK= add marker if the plot must be applied to a certain area
+% MARK2= add marker if the plot must be applied to a certain area
+% MODE= mode to plot in the case of VIB_MOD
+% XAXIS= direction of the x axis in SPACE plots
+% YAXIS= magnitude to plot in the y axis (U_DEF, V_DEF, W_DEF,PHI_DEF, PSI_DEF, THETA_DEF,...
+%                                        X_DEF, Y_DEF, Z_DEF, FX, FY, FZ, MX, MY, MZ) 
+% XLABEL= text of the x axis label
+% YLABEL= text of the y axis label
+% TITLE= title of the figure
+
+% XY plot TYPE= SPACE/TIME XAXIS (direction if space),...
+% YAXIS magnitude (U_DEF, V_DEF, W_DEF,PHI_DEF, PSI_DEF, THETA_DEF,...
+% X_DEF, Y_DEF, Z_DEF, FX, FY, FZ, MX, MY, MZ) 
+
+XYPLOT{
+FIGURE= 0
+TYPE= TIME
+ANIM= NO
+MODE= 0
+SAVE= results/plunge.png
+SAVE_DATA= results/plunge.csv
+MARK= Load
+XAXIS= 0 0 1
+YAXIS= V_DEF
+XLABEL= "t (s)"
+YLABEL= "Vertical Deformation (m)"
+TITLE= "Vertical Deformation of the Beam"
+DELTA_FRAME= 300
+LABEL= "v "
+FPS= 25
+}
+
+
+% XY plot TYPE= SPACE/TIME XAXIS (direction if space),...
+% YAXIS magnitude (U_DEF, V_DEF, W_DEF,PHI_DEF, PSI_DEF, THETA_DEF,...
+% X_DEF, Y_DEF, Z_DEF, FX, FY, FZ, MX, MY, MZ) 
+XYPLOT{
+FIGURE= 1
+TYPE= TIME
+ANIM= NO
+SAVE= results/twist.png
+SAVE_DATA= results/twist.csv
+MARK= Load
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= THETA_DEF_DEG
+XLABEL= "t (s)"
+YLABEL= "Torsion Deformation (deg)"
+TITLE= "Torsion of the Beam"
+DELTA_FRAME= 300
+LABEL= "Theta"
+FPS= 25
+}
+
+XYPLOT{
+FIGURE= 2
+TYPE= TIME
+ANIM= NO
+SAVE= results/plunge_der.png
+SAVE_DATA= results/plunge_der.csv
+MARK= Load
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= VDT_DEF
+XLABEL= "t (s)"
+YLABEL= "Plunge derivative (m/s)"
+TITLE= "Plunge of the Beam"
+DELTA_FRAME= 300
+LABEL= "v d"
+FPS= 25
+}
+
+XYPLOT{
+FIGURE= 3
+TYPE= TIME
+ANIM= NO
+SAVE= results/twist_der.png
+SAVE_DATA= results/twist_der.csv
+MARK= Load
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= THETADT_DEF_DEG
+XLABEL= "t (s)"
+YLABEL= "Torsion derivative (deg/s)"
+TITLE= "Torsion of the Beam"
+DELTA_FRAME= 300
+LABEL= "Theta d"
+FPS= 25
+}
+
+XYPLOT{
+FIGURE= 4
+TYPE= TIME
+ANIM= NO
+SAVE= results/plunge_derder.png
+SAVE_DATA= results/plunge_derder.csv
+MARK= Load
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= VDTDT_DEF
+XLABEL= "t (s)"
+YLABEL= "Plunge 2nd derivative (deg/s^2)"
+TITLE= "Plunge of the Beam"
+DELTA_FRAME= 300
+LABEL= "v dd"
+FPS= 25
+}
+
+XYPLOT{
+FIGURE= 5
+TYPE= TIME
+ANIM= NO
+SAVE= results/twist_derder.png
+SAVE_DATA= results/twist_derder.csv
+MARK= Load
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= THETADTDT_DEF_DEG
+XLABEL= "t (s)"
+YLABEL= "Torsion 2nd derivative (deg/s^2)"
+TITLE= "Torsion of the Beam"
+DELTA_FRAME= 300
+LABEL= "Theta dd"
+FPS= 25
+}
+
+XYPLOT{
+FIGURE= 6
+TYPE= TIME
+ANIM= NO
+SAVE= results/aoa.png
+SAVE_DATA= results/aoa.csv
+MARK= Load
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= ALPHA_DEF_DEG
+XLABEL= "t (s)"
+YLABEL= "AOA (deg)"
+TITLE= "Angle of attack of the Beam"
+DELTA_FRAME= 300
+LABEL= "aoa"
+FPS= 25
+}
+
+XYPLOT{
+FIGURE= 7
+TYPE= TIME
+ANIM= NO
+SAVE= results/aoader.png
+SAVE_DATA= results/aoader.csv
+MARK= Load
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= ALPHADT_DEF_DEG
+XLABEL= "t (s)"
+YLABEL= "AOA derivative (deg/s)"
+TITLE= "Angle of attack of the Beam"
+DELTA_FRAME= 300
+LABEL= "aoa d"
+FPS= 25
+}
+
+XYPLOT{
+FIGURE= 8
+TYPE= TIME
+ANIM= NO
+SAVE= results/aoaderder.png
+SAVE_DATA= results/aoaderder.csv
+MARK= Load
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= ALPHADTDT_DEF_DEG
+XLABEL= "t (s)"
+YLABEL= "AOA 2nd derivative (deg/s^2)"
+TITLE= "Angle of attack of the Beam"
+DELTA_FRAME= 300
+LABEL= "aoa dd"
+FPS= 25
+}
+
+
+XYPLOT{
+FIGURE= 9
+TYPE= TIME
+ANIM= NO
+SAVE= results/cl.png
+SAVE_DATA= results/cl.csv
+MARK= Load
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= CL
+XLABEL= "t (s)"
+YLABEL= "CL"
+TITLE= "Lift coefficient"
+DELTA_FRAME= 300
+LABEL= "cl"
+FPS= 25
+}
+
+XYPLOT{
+FIGURE= 10
+TYPE= TIME
+ANIM= NO
+SAVE= results/cm.png
+SAVE_DATA= results/cm.csv
+MARK= Load
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= CM
+XLABEL= "t (s)"
+YLABEL= "CM"
+TITLE= "Moment coefficient"
+DELTA_FRAME= 300
+LABEL= "cm"
+FPS= 25
+}
+
+XYPLOT{
+FIGURE= 11
+TYPE= TIME
+ANIM= NO
+SAVE= results/cd.png
+SAVE_DATA= results/cd.csv
+MARK= Load
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= CD
+XLABEL= "t (s)"
+YLABEL= "CD"
+TITLE= "Drag coefficient"
+DELTA_FRAME= 300
+LABEL= "cd"
+FPS= 25
+}

@@ -1,0 +1,403 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aeroelastic Beam Element Solver - ABESOL   %
+% Version: 00.01.000 beta                    %
+%                                            %
+% Author: Andres Cremades Botella            %
+% Date: 24/09/2020                           %
+% Case: Example 1 flat plate orthotropic     %
+%       90/0/0/90                            %
+% 	Stationary, vertical load            %
+%                                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Type of problem: STRUC_STAT (structural static)\ STRUC_DYN (structural dynamic)\ 
+%                  VIB_MOD (vibration modes)\ AEL_DYN (aeroelastic dynamic)
+
+PROB_TYPE=  AEL_DYN
+
+% Stress model: FLAT_STRESS (appropiated for 2D elements, classical laminates theory)\
+%               BEAM_STRESS (recomended, for 1D bars)
+
+STRESS_MODEL= FLAT_STRESS
+
+
+AELMOD_OMEGA= NO
+AELMOD_VMAX= 80
+AELMOD_VMIN= 0
+AELMOD_NUMV= 20
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SAVE OPTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PRINT_VALUES= 1
+% Save results in csv: YES\NO
+
+SAVE_FILE= NO
+
+% Name of the saved file (without spaces and extensions from the root path)
+
+SAVE_FILE_NAME= results/guardar_stat_5ref
+
+% Save the first # nodes (for VIB_MOD)
+
+SAVE_FILE_MODES= 10
+
+% Save every # time steps (for STRUC_STAT)
+
+SAVE_FILE_STEP= 10
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AERODYNAMIC DATA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aerodynamic model: TEOR_SLOPE (2pi aerodynamic slope)
+
+AERO_MODEL=  THEO_POLAR
+AERO_POLAR{
+POLAR_ID= polar_hkust
+Q_STD=  0 
+POLAR_FILE= ../../polar/polar_starccmtunnelw_095_085.csv
+POLAR_INDEP= POSITION,ANGLE_DEG
+POLAR_DEP= CD,CL,-CM
+3D_EFF=   NONE % LLT
+LLT_NODES= LLTData
+VIND_TOL= 1e-3
+VIND_MAXIT= 1e3
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MESH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Path to the mesh file
+
+MESH_FILE=  ../../mesh/beam/membranebeam1sec_4deg.mesh % ../../mesh/beam/beamtest.mesh %
+
+REF_MESH= 0
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TRANSIENT SOLVER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+MOD_SOL= YES
+N_MOD= 6
+
+% Initialization of the problem, number of iterations of the explicit solver
+
+INIT_IT= 5
+
+% Numerical method
+% * Explicit Runge-Kutta order 4 ------------------------------------- RK4_EXP
+% * Predictor-corrector Runge-Kutta order 4 -------------------------- RK4_PC
+% * Adaptative time step predictor-corrector Runge-Kutta order 4 ----- ADA_RK4_PC (recomended)
+% * Backward implicit order 4 ---------------------------------------- BACK4_IMP
+% * Implicit Adams-Moulton order 4 ----------------------------------- AM4_IMP
+% * Predictor-corrector Adams-Moulton order 3 ------------------------ AM3_PC
+% * Predictor-corrector Hamming order 3 ------------------------------ HAM3_PC
+
+% INITIAL NUMERICAL METHOD
+
+INIT_SOLVER= ADAEX_RK4_EXP
+ADA_TOL= 1e-4
+% SOLVER NUMERICAL METHOD
+SOLVER= ADAEX_RK4_EXP
+
+
+
+% Calculation total time in seconds
+
+
+TOT_TIME= 0.5
+Time step in seconds (if the time step is to high the calculation migh diverge)
+
+TIME_STP= 3e-4
+
+% Initial conditions of the transient solution
+% Use a file to set the initial conditions: YES\NO
+
+INI_CON= NO 
+
+% The file to use initial conditions (without spaces from the root paht)
+
+INI_CON_DATA= 
+
+% Set the filter for velocity and acceleration
+FILT= NO
+FILT_FREQ= 50
+FILT_TTRAN= 1
+FILT_DB= 100
+FILT_WID= 20
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SOLID PHYSICS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Damping model of the sistem for STRUC_DYN: RAYLEIGH\NONE
+
+DAMP=   NONE % RAYLEIGH
+
+% Damping of the system
+
+DAMP_FACT= DIREC
+DAMP_RAY_VAL1= 1e-3
+DAMP_RAY_VAL2= 1e-3
+DAMP_RAY_F1= 10
+DAMP_RAY_F2= 30
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BOUNDARY CONDITIONS	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Boundary conditions for clamped section:
+% MARK_ID{
+% BC_DISP= name of the set of sections
+% BC_VALUES= value of the vector of displacements, rotations, and derivatives of the rotation
+% }
+
+
+MARK_ID{ 
+BC_ID= batfix
+BC_DISP= batten
+BC_VALUES= nan nan nan nan nan nan 0 0 0
+}
+
+
+MARK_ID{ 
+BC_ID= fixed
+BC_DISP= Root
+BC_VALUES= 0 0 0 0 0 0 0 0 0
+}
+
+
+
+% MARK_ID{ 
+BC_ID= load
+BC_NODELOAD= Tip
+BC_VALUES= 0 1 0 0 0 0 0 0 0
+}
+
+MARK_ID{ 
+BC_ID= Aerodinamica
+BC_AERO= beam
+BC_POLAR= polar_hkust
+BC_VINF= 18
+BC_RHO= 1.225
+BC_MU= 	1.74E-5
+L_REF= 0.1
+S_REF= 0.0398
+BC_REFPOINT= 0
+BC_VDIR= 1,0,0
+% BC_REFROT= 0,1,0
+BC_REFCL= 0,1,0
+BC_REFCD= 1,0,0
+BC_REFCM= 0,0,-1
+% BC_REFCT= 0,1,0
+% BC_RADIUS= 1
+% BC_VROT= 35
+% BC_NB= 3
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LOAD FUNCTIONS	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+% Transient function for the boundary conditions...
+% TRAN_MARK= name of the marker...
+% FUNCTION= SIN: AMPL= FREQ= PHAS= (sinusoidal function with amplitude AMPL, frequency FREQ 
+%                                  and initial phase PHAS)
+% FUNCTION= SIGM: SLP= MID_POIN= (sigmoid function with a slope in the center of value SLP 
+%                                and a midpoint of value MID_POIN=)
+% FUNCTION= TABLE: FILE= PER= YES\NO (the function is loaded from a csv file with the values 
+%                                    of the funcion and the time, if PERI= YES the function...
+%                                    is repeated, if PERI= NO, the last value is mantained
+% ----------------------------------------------------------------------------
+% TRAN_BC{
+% TRAN_MARK= Load
+% FUNCTION= SIN: 
+% AMPL= 10 
+% FREQ= 10
+% PHAS= 0
+% }
+% ----------------------------------------------------------------------------
+TRAN_BC{
+TRAN_MARK= Aerodinamica
+FUNCTION= SIGM:
+SLP= 10
+MID_POIN= 0.05
+}
+% ----------------------------------------------------------------------------
+% TRAN_BC{
+% TRAN_MARK= Load
+% FUNCTION= TABLE:
+% FILE=  boundary_conditions/impulse.csv
+% PER= NO
+% }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PLOTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Deformed shape of all the structure
+% FIGURE= number of the figure to plot
+% MARK= add marker if the plot must be applied to a certain area
+% MARK2= add marker if the plot must be applied to a certain area
+% MODE= mode to plot in the case of VIB_MOD
+% SAVE= path to save the file (without spaces)
+% DELTA_FRAME= number of steps to skip between frames in the animation
+% FPS= frames per second of the animation
+% XLABEL= text of the x axis label
+% YLABEL= text of the y axis label
+% ZLABEL= text of the z axis label
+% TITLE= text of the title of the plot
+% DIHEDRAL= first axis to plot in the animation X (x-y-z), Y (y-z-x), Z (z-x-y)
+
+
+% XY plot
+% FIGURE= figure to create the plot
+% TYPE= SPACE\TIME (magnitude of the x axis, TIME only for STRUC_DYN
+% ANIM= YES\NO (to create an animation)
+% SAVE= path to save the figure
+% MARK= add marker if the plot must be applied to a certain area
+% MARK2= add marker if the plot must be applied to a certain area
+% MODE= mode to plot in the case of VIB_MOD
+% XAXIS= direction of the x axis in SPACE plots
+% YAXIS= magnitude to plot in the y axis (U_DEF, V_DEF, W_DEF,PHI_DEF, PSI_DEF, THETA_DEF,...
+%                                        X_DEF, Y_DEF, Z_DEF, FX, FY, FZ, MX, MY, MZ) 
+% XLABEL= text of the x axis label
+% YLABEL= text of the y axis label
+% TITLE= title of the figure
+
+% XY plot TYPE= SPACE/TIME XAXIS (direction if space),...
+% YAXIS magnitude (U_DEF, V_DEF, W_DEF,PHI_DEF, PSI_DEF, THETA_DEF,...
+% X_DEF, Y_DEF, Z_DEF, FX, FY, FZ, MX, MY, MZ) 
+
+
+
+
+
+
+
+XYPLOT{
+FIGURE= 0
+TYPE= TIME
+ANIM= NO
+MODE= 0
+SAVE= results/plunge.png
+SAVE_DATA= results/plunge.csv
+MARK= Tip
+XAXIS= 0 0 1
+YAXIS= V_DEF
+%YAXIS2= PHI_DEF
+XLABEL= "t (s)"
+YLABEL= "Vertical Deformation (m)"
+%YLABEL2= "Vertical Deformation Slope (deg)"
+TITLE= "Vertical Deformation of the Beam"
+DELTA_FRAME= 300
+LABEL= "v "
+%LABEL2= "$\phi$"
+FPS= 25
+COLOR= viridis
+}
+
+XYPLOT{
+FIGURE= 1
+TYPE= TIME
+ANIM= NO
+SAVE= results/twist.png
+SAVE_DATA= results/twist.csv
+MARK= Tip
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= THETA_DEF_DEG
+XLABEL= "t (s)"
+YLABEL= "Torsion Deformation (deg)"
+TITLE= "Torsion of the Beam"
+DELTA_FRAME= 300
+LABEL= "Theta"
+FPS= 25
+COLOR= viridis
+}
+
+
+XYPLOT{
+FIGURE= 2
+TYPE= TIME
+ANIM= NO
+SAVE= results/cd.png
+SAVE_DATA= results/cd.csv
+MARK= Tip
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= CD
+XLABEL= "t (s)"
+YLABEL= "CD"
+TITLE= "Drag coefficient"
+DELTA_FRAME= 300
+LABEL= "cd"
+FPS= 25
+COLOR= viridis
+}
+
+XYPLOT{
+FIGURE= 3
+TYPE= TIME
+ANIM= NO
+SAVE= results/cl.png
+SAVE_DATA= results/cl.csv
+MARK= Tip
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= CL
+XLABEL= "t (s)"
+YLABEL= "CL"
+TITLE= "Lift coefficient"
+DELTA_FRAME= 300
+LABEL= "cl"
+FPS= 25
+COLOR= viridis
+}
+
+XYPLOT{
+FIGURE= 4
+TYPE= TIME
+ANIM= NO
+SAVE= results/cm.png
+SAVE_DATA= results/cm.csv
+MARK= Tip
+XAXIS= 0 0 1
+MODE= 0
+YAXIS= CM
+XLABEL= "t (s)"
+YLABEL= "CM"
+TITLE= "Moment coefficient"
+DELTA_FRAME= 300
+LABEL= "cm"
+FPS= 25
+COLOR= viridis
+}
+
+
+% DEF_SHAPE{
+FIGURE= 5
+MARK= spar %,membrane
+SAVE= vibration/deformed_shape.png
+SAVE_DATA= results/deformed_data-60.csv
+DELTA_FRAME= 100
+FPS= 25
+MODE= 4
+XLABEL= "X (m)"
+YLABEL= "Y (m)"
+ZLABEL= "Z (m)"
+TITLE= "Deformation"
+DIHEDRAL= Z
+ROT= NO
+ROT_NAME= aerorot
+FACE= P2P
+}

@@ -1,0 +1,60 @@
+%	Flat	plate	section	example					0.003866	0.001933	29.85074627										
+%	----------------------------------------------------------																				
+%	Type	of	section																		
+%	----------------------------------------------------------																				
+%	TYPE=	>>>>>	THIN_WALL_O	/	THIN_WALL_C	(open	thin	wall	section\closed	thin	wall	section)									
+%	PHYS=	>>>>>	YES	/	NO																
+TYPE=	THIN_WALL_O																				
+NELEM=	20	%	Number	of	elements	of	the	section													
+0	0	1	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+1	1	2	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+2	2	3	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+3	3	4	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+4	4	5	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+5	5	6	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+6	6	7	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+7	7	8	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+8	8	9	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+9	9	10	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+10	10	11	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+11	11	12	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+12	12	13	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+13	13	14	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+14	14	15	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+15	15	16	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+16	16	17	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+17	17	18	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+18	18	19	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+19	19	20	4.00E-03	PLY{	90/0	1.34e-4/3.866e-3	../materials/CFRP.txt_../materials/foam.txt	}	%	#num	elem	#node0	#node1	#thickness	#NOPLY{	material	}\PLY{	direction0/direction1/...	thickness0/thickness1/...	material0_material1_...	}
+																					
+																					
+																					
+NPOINT=	21	%	number	of	nodes	of	the	section													
+0	-0.05	0	%	#num	node	#x	#y														
+1	-0.045	0	%	#num	node	#x	#y														
+2	-0.04	0	%	#num	node	#x	#y														
+3	-0.035	0	%	#num	node	#x	#y														
+4	-0.03	0	%	#num	node	#x	#y														
+5	-0.025	0	%	#num	node	#x	#y														
+6	-0.02	0	%	#num	node	#x	#y														
+7	-0.015	0	%	#num	node	#x	#y														
+8	-0.01	0	%	#num	node	#x	#y														
+9	-0.005	0	%	#num	node	#x	#y														
+10	0	0	%	#num	node	#x	#y														
+11	0.005	0	%	#num	node	#x	#y														
+12	0.01	0	%	#num	node	#x	#y														
+13	0.015	0	%	#num	node	#x	#y														
+14	0.02	0	%	#num	node	#x	#y														
+15	0.025	0	%	#num	node	#x	#y														
+16	0.03	0	%	#num	node	#x	#y														
+17	0.035	0	%	#num	node	#x	#y														
+18	0.04	0	%	#num	node	#x	#y														
+19	0.045	0	%	#num	node	#x	#y														
+20	0.05	0	%	#num	node	#x	#y																				
+													
+% Aerodynamic origin
+AE_ORIG_X= 0 %-0.025
+AE_ORIG_Y= 0
+
+LE=	0											
+TE=	20
