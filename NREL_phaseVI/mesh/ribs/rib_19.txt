@@ -1,0 +1,8 @@
+% file to include extra mass
+m= 0.074
+Ixx= 179.400e-06
+Iyy= 3195.591e-06
+Izz= 3374.880e-06
+Ixy= -375.197e-06
+Iyz= 0
+Izx= 0

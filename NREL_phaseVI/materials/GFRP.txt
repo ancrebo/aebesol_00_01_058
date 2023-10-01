@@ -1,0 +1,10 @@
+% Orthotropic material 
+TYPE= ORT % Type of material ISO\ORT
+EL= 20e9 % Longitudinal stiffness
+ET= 19e9 % Transversal stiffness
+GLT= 4.2e9 % Longitudinal-transversal shear modulus
+GTN= 4.2e9 % Transversal-normal shear modulus
+nuLT= 0.13 % Longitudinal-transversal poisson coefficient
+nuTN= 0.13 % Transversal-normal poisson coefficient
+rho= 2540 % Density
+

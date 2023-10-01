@@ -1,0 +1,170 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+TYPE= THIN_WALL_C  
+REF= 0  
+WARP= YES  
+ 
+NCELL=  2  
+0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 62 63 64 65 66 67 68 69 70 71 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61  
+1 71 70 69 68 67 66 65 64 63 62 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46  
+ 
+NELEM= 72  
+0 0 1 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+1 1 2 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+2 2 3 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+3 3 4 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+4 4 5 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+5 5 6 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+6 6 7 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+7 7 8 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+8 8 9 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+9 9 10 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+10 10 11 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+11 11 12 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+12 12 13 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+13 13 14 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+14 14 15 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+15 15 16 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+16 16 17 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+17 17 18 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+18 18 19 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+19 19 20 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+20 20 21 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+21 21 22 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+22 22 23 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+23 23 24 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+24 24 25 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+25 25 26 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+26 26 27 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+27 27 28 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+28 28 29 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+29 29 30 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+30 30 31 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+31 31 32 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+32 32 33 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+33 33 34 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+34 34 35 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+35 35 36 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+36 36 37 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+37 37 38 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+38 38 39 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+39 39 40 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+40 40 41 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+41 41 42 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+42 42 43 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+43 43 44 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+44 44 45 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+45 45 46 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+46 46 47 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+47 47 48 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+48 48 49 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+49 49 50 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+50 50 51 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+51 51 52 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+52 52 53 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+53 53 54 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+54 54 55 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+55 55 56 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+56 56 57 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+57 57 58 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+58 58 59 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+59 59 60 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+60 60 61 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+61 61 0 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+62 14 62 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+63 62 63 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+64 63 64 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+65 64 65 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+66 65 66 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+67 66 67 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+68 67 68 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+69 68 69 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+70 69 70 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+71 70 47 0.00187 PLY{ 90/90/45/-45/-45/45/90/90 5.33e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/1.34e-4/5.33e-4 ../../materials/GFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/CFRP.txt_../../materials/GFRP.txt }  
+ 
+ 
+NPOINT= 71  
+0 0.11824 0.0031561  
+1 0.11748 -0.0088256  
+2 0.11521 -0.020684  
+3 0.11145 -0.032278  
+4 0.10628 -0.043469  
+5 0.099751 -0.054118  
+6 0.091975 -0.06409  
+7 0.08306 -0.073259  
+8 0.073131 -0.081503  
+9 0.06233 -0.08871  
+10 0.050804 -0.094778  
+11 0.03871 -0.099618  
+12 0.026207 -0.10316  
+13 0.013461 -0.10533  
+14 0.0039544 -0.10597  
+15 0.0010121 -0.1061  
+16 -0.010248 -0.10566  
+17 -0.021374 -0.10412  
+18 -0.032268 -0.10148  
+19 -0.04283 -0.097795  
+20 -0.052958 -0.093105  
+21 -0.062554 -0.087466  
+22 -0.07152 -0.080946  
+23 -0.079761 -0.073614  
+24 -0.08719 -0.065546  
+25 -0.093736 -0.056825  
+26 -0.099327 -0.047545  
+27 -0.1039 -0.037804  
+28 -0.1074 -0.027699  
+29 -0.10979 -0.017331  
+30 -0.11102 -0.0068022  
+31 -0.11107 0.0038103  
+32 -0.10997 0.014423  
+33 -0.10773 0.02492  
+34 -0.1044 0.035188  
+35 -0.099992 0.045121  
+36 -0.094561 0.054618  
+37 -0.08816 0.063582  
+38 -0.080852 0.071921  
+39 -0.072712 0.079551  
+40 -0.063819 0.086394  
+41 -0.054264 0.092379  
+42 -0.044141 0.097446  
+43 -0.033551 0.10154  
+44 -0.022602 0.10462  
+45 -0.011401 0.10665  
+46 -6.1564e-05 0.10759  
+47 0.0030808 0.10768  
+48 0.014458 0.10715  
+49 0.026286 0.10548  
+50 0.037909 0.10267  
+51 0.049181 0.098775  
+52 0.059968 0.093829  
+53 0.070141 0.08789  
+54 0.079584 0.081021  
+55 0.088187 0.073295  
+56 0.095851 0.064792  
+57 0.10249 0.0556  
+58 0.10805 0.045821  
+59 0.11245 0.035569  
+60 0.11565 0.024965  
+61 0.11759 0.014124  
+62 0.003867 -0.084608  
+63 0.0037796 -0.063242  
+64 0.0036923 -0.041877  
+65 0.0036049 -0.020512  
+66 0.0035176 0.00085345  
+67 0.0034302 0.022219  
+68 0.0033429 0.043584  
+69 0.0032555 0.064949  
+70 0.0031681 0.086315  
+ 
+ 
+ 
+LE= 31  
+TE= 0  
+ 
+AE_ORIG_X= 0  
+AE_ORIG_Y= 0 

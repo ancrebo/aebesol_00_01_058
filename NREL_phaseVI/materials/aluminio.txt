@@ -1,0 +1,5 @@
+
+TYPE= ISO % Type of material ISO\ORT
+E= 68.9e9 
+G= 25.9e9 
+rho= 2700 % Density
